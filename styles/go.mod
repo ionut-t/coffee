@@ -10,7 +10,7 @@ require (
 	github.com/charmbracelet/lipgloss v1.1.1-0.20250404203927-76690c660834
 	github.com/charmbracelet/lipgloss/v2 v2.0.0-beta1
 	github.com/charmbracelet/x/exp/charmtone v0.0.0-20250922100529-c9afca5d6f21
-	github.com/ionut-t/goeditor/adapter-bubbletea v0.1.13
+	github.com/ionut-t/goeditor/adapter-bubbletea v0.2.3
 	github.com/ionut-t/gotable v0.1.0
 )
 
@@ -29,7 +29,7 @@ require (
 	github.com/dustin/go-humanize v1.0.1 // indirect
 	github.com/erikgeiser/coninput v0.0.0-20211004153227-1c3628e74d0f // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
-	github.com/ionut-t/goeditor/core v0.1.8 // indirect
+	github.com/ionut-t/goeditor/core v0.2.2 // indirect
 	github.com/lucasb-eyer/go-colorful v1.3.0 // indirect
 	github.com/mattn/go-isatty v0.0.20 // indirect
 	github.com/mattn/go-localereader v0.0.1 // indirect

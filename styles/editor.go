@@ -10,6 +10,7 @@ func EditorTheme() editor.Theme {
 	insertModeBG := Primary.GetForeground()
 	visualModeBG := Accent.GetForeground()
 	commandModeBG := Warning.GetForeground()
+	searchModeBG := Subtext0.GetForeground()
 
 	return editor.Theme{
 		NormalModeStyle: lipgloss.NewStyle().
@@ -30,6 +31,11 @@ func EditorTheme() editor.Theme {
 		CommandModeStyle: lipgloss.NewStyle().
 			Foreground(Base.GetForeground()).
 			Background(commandModeBG).
+			Bold(true),
+
+		SearchModeStyle: lipgloss.NewStyle().
+			Foreground(Base.GetForeground()).
+			Background(searchModeBG).
 			Bold(true),
 
 		CommandLineStyle: Surface0,
@@ -54,5 +60,8 @@ func EditorTheme() editor.Theme {
 			Bold(true),
 
 		PlaceholderStyle: Overlay0,
+
+		SearchHighlightStyle: Highlight.
+			Bold(true),
 	}
 }
