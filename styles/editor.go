@@ -63,5 +63,11 @@ func EditorTheme() editor.Theme {
 
 		SearchHighlightStyle: Highlight.
 			Bold(true),
+
+		SearchInputTextStyle: Text,
+
+		SearchInputPromptStyle: Subtext1,
+
+		SearchInputCursorStyle: Subtext1,
 	}
 }
