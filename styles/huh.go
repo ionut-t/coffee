@@ -5,7 +5,7 @@ import (
 	"github.com/charmbracelet/lipgloss"
 )
 
-func ThemeCatppuccin() *huh.Theme {
+func HuhThemeCatppuccin() *huh.Theme {
 	t := huh.ThemeBase()
 
 	var (
@@ -58,12 +58,4 @@ func ThemeCatppuccin() *huh.Theme {
 	t.Help.FullSeparator = t.Help.FullSeparator.Foreground(subtext0)
 
 	return t
-}
-
-func HighlighterTheme() string {
-	if lipgloss.HasDarkBackground() {
-		return "catppuccin-mocha"
-	}
-
-	return "catppuccin-latte"
 }

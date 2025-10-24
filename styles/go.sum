@@ -67,8 +67,12 @@ github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
 github.com/ionut-t/goeditor/adapter-bubbletea v0.2.7 h1:JlQyXh++9rLCzBY5VJBK8iMelIV671rIn26pafsqwog=
 github.com/ionut-t/goeditor/adapter-bubbletea v0.2.7/go.mod h1:A6qKn/JmDEmPbte3dlidWxjd5vjs3ry5R47glPXNyV4=
+github.com/ionut-t/goeditor/adapter-bubbletea v0.2.9 h1:sqhTTJZ+HSDX7D1u8iV9yPaFLVeLUzJ9980ghzanTyg=
+github.com/ionut-t/goeditor/adapter-bubbletea v0.2.9/go.mod h1:vdMLLnKl0L7SOYlPiP7h8OUIbM2RMNhQwDUjT4ps/Os=
 github.com/ionut-t/goeditor/core v0.2.5 h1:VVhLiV7Iza+FHQpJjanSBrTyzh0YfNKeg26m+neTj3g=
 github.com/ionut-t/goeditor/core v0.2.5/go.mod h1:sFe2iuAcaU8xyaYiiPEZBoY+0N+rljwdGH75msGiyBU=
+github.com/ionut-t/goeditor/core v0.2.6 h1:zeOyg4ru+t883Rmu0M62hMx65U8cI+Cjb4dt3dQ0+Pc=
+github.com/ionut-t/goeditor/core v0.2.6/go.mod h1:sFe2iuAcaU8xyaYiiPEZBoY+0N+rljwdGH75msGiyBU=
 github.com/ionut-t/gotable v0.1.0 h1:1dZ7KBRQ9uJQOWIOWsLji3dBWp6QVdWmAw0mEAk4bxA=
 github.com/ionut-t/gotable v0.1.0/go.mod h1:YY4s6KP/yUrNMJkvMLDfhy7qflhiAxOqK2VnD4deWmI=
 github.com/kylelemons/godebug v1.1.0 h1:RPNrshWIDI6G2gRW9EHilWtl7Z6Sb1BR0xunSBf0SNc=

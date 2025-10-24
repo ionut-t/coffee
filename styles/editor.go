@@ -44,9 +44,9 @@ func EditorTheme() editor.Theme {
 			Foreground(Subtext0.GetForeground()),
 
 		MessageStyle: Info,
-		ErrorStyle:   Error,
+		ErrorStyle:   Error.Bold(true),
 
-		LineNumberStyle: Subtext0.
+		LineNumberStyle: Overlay0.
 			Width(4).
 			Align(lipgloss.Right),
 
@@ -69,5 +69,15 @@ func EditorTheme() editor.Theme {
 		SearchInputPromptStyle: Subtext1,
 
 		SearchInputCursorStyle: Subtext1,
+
+		CurrentLineStyle: Surface0,
 	}
+}
+
+func EditorLanguageTheme() string {
+	if lipgloss.HasDarkBackground() {
+		return "catppuccin-mocha"
+	}
+
+	return "catppuccin-latte"
 }
