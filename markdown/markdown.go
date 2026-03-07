@@ -2,9 +2,10 @@ package markdown
 
 import (
 	_ "embed"
+	"os"
 
+	"charm.land/lipgloss/v2"
 	"github.com/charmbracelet/glamour"
-	"github.com/charmbracelet/lipgloss"
 )
 
 //go:embed glamour-themes/catppuccin-mocha.json
@@ -14,7 +15,7 @@ var catppuccinMochaTheme []byte
 var catppuccinLatteTheme []byte
 
 func getThemeBytes() []byte {
-	if lipgloss.HasDarkBackground() {
+	if lipgloss.HasDarkBackground(os.Stdout, os.Stderr) {
 		return catppuccinMochaTheme
 	}
 

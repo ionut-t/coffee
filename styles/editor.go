@@ -1,7 +1,7 @@
 package styles
 
 import (
-	"github.com/charmbracelet/lipgloss"
+	"charm.land/lipgloss/v2"
 	editor "github.com/ionut-t/goeditor/adapter-bubbletea"
 )
 
@@ -75,7 +75,7 @@ func EditorTheme() editor.Theme {
 }
 
 func EditorLanguageTheme() string {
-	if lipgloss.HasDarkBackground() {
+	if IsDark() {
 		return "catppuccin-mocha"
 	}
 

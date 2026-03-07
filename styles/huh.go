@@ -1,12 +1,12 @@
 package styles
 
 import (
-	"github.com/charmbracelet/huh"
-	"github.com/charmbracelet/lipgloss"
+	"charm.land/huh/v2"
+	"charm.land/lipgloss/v2"
 )
 
-func HuhThemeCatppuccin() *huh.Theme {
-	t := huh.ThemeBase()
+func HuhThemeCatppuccin() *huh.Styles {
+	t := huh.ThemeBase(IsDark())
 
 	var (
 		base     = Base.GetForeground()

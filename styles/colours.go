@@ -1,60 +1,89 @@
 package styles
 
 import (
+	"image/color"
+	"os"
+
+	"charm.land/lipgloss/v2"
 	catppuccin "github.com/catppuccin/go"
-	"github.com/charmbracelet/lipgloss"
 )
+
+var isDark bool
+
+func init() {
+	isDark = lipgloss.HasDarkBackground(os.Stdout, os.Stderr)
+}
+
+func IsDark() bool {
+	return isDark
+}
+
+func AdaptiveColor(light, dark color.Color) color.Color {
+	if isDark {
+		return dark
+	}
+
+	return light
+}
+
+func AdaptiveColorFromString(light, dark string) color.Color {
+	if isDark {
+		return lipgloss.Color(dark)
+	}
+
+	return lipgloss.Color(light)
+}
 
 var (
 	Base = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Base().Hex, Dark: catppuccin.Mocha.Base().Hex})
+		Foreground(AdaptiveColor(catppuccin.Latte.Base(), catppuccin.Mocha.Base()))
 
 	Text = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Text().Hex, Dark: catppuccin.Mocha.Text().Hex})
+		Foreground(AdaptiveColor(catppuccin.Latte.Text(), catppuccin.Mocha.Text()))
 
 	Primary = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Sapphire().Hex, Dark: catppuccin.Mocha.Sapphire().Hex})
+		Foreground(AdaptiveColor(catppuccin.Latte.Sapphire(), catppuccin.Mocha.Sapphire()))
 
 	Accent = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Teal().Hex, Dark: catppuccin.Mocha.Teal().Hex})
+		Foreground(AdaptiveColor(catppuccin.Latte.Teal(), catppuccin.Mocha.Teal()))
 
 	Success = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Green().Hex, Dark: catppuccin.Mocha.Green().Hex})
+		Foreground(AdaptiveColor(catppuccin.Latte.Green(), catppuccin.Mocha.Green()))
 
 	Error = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Red().Hex, Dark: catppuccin.Mocha.Red().Hex})
+		Foreground(AdaptiveColor(catppuccin.Latte.Red(), catppuccin.Mocha.Red()))
 
 	Warning = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Yellow().Hex, Dark: catppuccin.Mocha.Yellow().Hex})
+		Foreground(AdaptiveColor(catppuccin.Latte.Yellow(), catppuccin.Mocha.Yellow()))
 
 	Info = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Blue().Hex, Dark: catppuccin.Mocha.Blue().Hex})
+		Foreground(AdaptiveColor(catppuccin.Latte.Blue(), catppuccin.Mocha.Blue()))
 
 	Subtext0 = lipgloss.NewStyle().
-			Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Subtext0().Hex, Dark: catppuccin.Mocha.Subtext0().Hex})
+			Foreground(AdaptiveColor(catppuccin.Latte.Subtext0(), catppuccin.Mocha.Subtext0()))
 
 	Subtext1 = lipgloss.NewStyle().
-			Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Subtext1().Hex, Dark: catppuccin.Mocha.Subtext1().Hex})
+			Foreground(AdaptiveColor(catppuccin.Latte.Subtext1(), catppuccin.Mocha.Subtext1()))
 
 	Overlay0 = lipgloss.NewStyle().
-			Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Overlay0().Hex, Dark: catppuccin.Mocha.Overlay0().Hex})
+			Foreground(AdaptiveColor(catppuccin.Latte.Overlay0(), catppuccin.Mocha.Overlay0()))
 
 	Overlay1 = lipgloss.NewStyle().
-			Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Overlay1().Hex, Dark: catppuccin.Mocha.Overlay1().Hex})
+			Foreground(AdaptiveColor(catppuccin.Latte.Overlay1(), catppuccin.Mocha.Overlay1()))
 
 	Surface0 = lipgloss.NewStyle().
-			Background(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Surface0().Hex, Dark: catppuccin.Mocha.Surface0().Hex})
+			Background(AdaptiveColor(catppuccin.Latte.Surface0(), catppuccin.Mocha.Surface0()))
 
 	Surface1 = lipgloss.NewStyle().
-			Background(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Surface1().Hex, Dark: catppuccin.Mocha.Surface1().Hex})
+			Background(AdaptiveColor(catppuccin.Latte.Surface1(), catppuccin.Mocha.Surface1()))
 
 	Crust = lipgloss.NewStyle().
-		Background(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Crust().Hex, Dark: catppuccin.Mocha.Crust().Hex})
+		Background(AdaptiveColor(catppuccin.Latte.Crust(), catppuccin.Mocha.Crust()))
 
 	AccentBackground = lipgloss.NewStyle().
-				Background(lipgloss.AdaptiveColor{Light: catppuccin.Mocha.Mauve().Hex, Dark: catppuccin.Latte.Teal().Hex})
+				Background(AdaptiveColor(catppuccin.Latte.Teal(), catppuccin.Mocha.Teal()))
 
 	Highlight = lipgloss.NewStyle().
-			Foreground(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Base().Hex, Dark: catppuccin.Mocha.Base().Hex}).
-			Background(lipgloss.AdaptiveColor{Light: catppuccin.Latte.Sapphire().Hex, Dark: catppuccin.Mocha.Sapphire().Hex})
+			Foreground(Base.GetForeground()).
+			Background(Primary.GetForeground())
 )

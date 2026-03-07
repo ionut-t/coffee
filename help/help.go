@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"strings"
 
+	"charm.land/bubbles/v2/viewport"
+	tea "charm.land/bubbletea/v2"
+	"charm.land/lipgloss/v2"
 	"github.com/charmbracelet/bubbles/key"
-	"github.com/charmbracelet/bubbles/viewport"
-	tea "github.com/charmbracelet/bubbletea"
-	"github.com/charmbracelet/lipgloss"
 	"github.com/ionut-t/coffee/styles"
 )
 
@@ -16,7 +16,7 @@ type Model struct {
 }
 
 func New() Model {
-	vp := viewport.New(0, 0)
+	vp := viewport.New()
 
 	return Model{
 		viewport: vp,
@@ -24,8 +24,8 @@ func New() Model {
 }
 
 func (m *Model) SetSize(width, height int) {
-	m.viewport.Width = width
-	m.viewport.Height = height
+	m.viewport.SetWidth(width)
+	m.viewport.SetHeight(height)
 }
 
 func (m *Model) SetContent(helpText string) {
@@ -103,7 +103,8 @@ func RenderHelpView(width int, keys []key.Binding) string {
 func RenderCmdHelp(width int, entries []struct {
 	Command     string
 	Description string
-}) string {
+},
+) string {
 	var sb strings.Builder
 	maxKeyWidth := 0
 

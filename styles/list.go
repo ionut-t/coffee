@@ -1,8 +1,8 @@
 package styles
 
 import (
-	"github.com/charmbracelet/bubbles/list"
-	"github.com/charmbracelet/lipgloss"
+	"charm.land/bubbles/v2/list"
+	"charm.land/lipgloss/v2"
 )
 
 func ListStyles() (s list.Styles) {
@@ -11,24 +11,24 @@ func ListStyles() (s list.Styles) {
 		ellipsis = "…"
 	)
 
-	verySubduedColor := lipgloss.AdaptiveColor{Light: "#DDDADA", Dark: "#3C3C3C"}
-	subduedColor := lipgloss.AdaptiveColor{Light: "#9B9B9B", Dark: "#5C5C5C"}
+	verySubduedColor := AdaptiveColorFromString("#DDDADA", "#3C3C3C")
+	subduedColor := AdaptiveColorFromString("#9B9B9B", "#5C5C5C")
 
 	s.TitleBar = lipgloss.NewStyle().Padding(0, 0, 1, 2)
 
 	s.Title = Primary.Bold(true)
 
 	s.Spinner = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: "#8E8E8E", Dark: "#747373"})
+		Foreground(AdaptiveColorFromString("#8E8E8E", "#747373"))
 
-	s.FilterPrompt = Primary
+	s.Filter.Focused.Prompt = Primary
 
-	s.FilterCursor = Primary
+	s.Filter.Cursor.Color = Primary.GetForeground()
 
 	s.DefaultFilterCharacterMatch = lipgloss.NewStyle().Underline(true)
 
 	s.StatusBar = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: "#A49FA5", Dark: "#777777"}).
+		Foreground(AdaptiveColorFromString("#A49FA5", "#777777")).
 		Padding(0, 0, 1, 2)
 
 	s.StatusEmpty = lipgloss.NewStyle().Foreground(subduedColor)
@@ -46,7 +46,7 @@ func ListStyles() (s list.Styles) {
 	s.HelpStyle = lipgloss.NewStyle().Padding(1, 0, 0, 2)
 
 	s.ActivePaginationDot = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: "#847A85", Dark: "#979797"}).
+		Foreground(AdaptiveColorFromString("#847A85", "#979797")).
 		SetString(bullet)
 
 	s.InactivePaginationDot = lipgloss.NewStyle().
@@ -74,11 +74,11 @@ func ListItemStyles() (s list.DefaultItemStyles) {
 		Foreground(Accent.GetForeground())
 
 	s.DimmedTitle = lipgloss.NewStyle().
-		Foreground(lipgloss.AdaptiveColor{Light: "#A49FA5", Dark: "#777777"}).
+		Foreground(AdaptiveColorFromString("#A49FA5", "#777777")).
 		Padding(0, 0, 0, 2)
 
 	s.DimmedDesc = s.DimmedTitle.
-		Foreground(lipgloss.AdaptiveColor{Light: "#C2B8C2", Dark: "#4D4D4D"})
+		Foreground(AdaptiveColorFromString("#C2B8C2", "#4D4D4D"))
 
 	s.FilterMatch = lipgloss.NewStyle().Underline(true)
 
