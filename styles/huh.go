@@ -6,12 +6,12 @@ import (
 )
 
 type HuhThemeCatppuccin struct {
-	styles Styles
+	Styles Styles
 }
 
 func (t HuhThemeCatppuccin) Theme(isDark bool) *huh.Styles {
 	theme := huh.ThemeBase(isDark)
-	styles := t.styles
+	styles := t.Styles
 
 	var (
 		base     = styles.Base.GetForeground()
