@@ -5,76 +5,76 @@ import (
 	editor "github.com/ionut-t/goeditor/adapter-bubbletea"
 )
 
-func EditorTheme() editor.Theme {
-	normalModeBG := Info.GetForeground()
-	insertModeBG := Primary.GetForeground()
-	visualModeBG := Accent.GetForeground()
-	commandModeBG := Warning.GetForeground()
-	searchModeBG := Subtext0.GetForeground()
+func EditorTheme(styles Styles) editor.Theme {
+	normalModeBG := styles.Info.GetForeground()
+	insertModeBG := styles.Primary.GetForeground()
+	visualModeBG := styles.Accent.GetForeground()
+	commandModeBG := styles.Warning.GetForeground()
+	searchModeBG := styles.Subtext0.GetForeground()
 
 	return editor.Theme{
 		NormalModeStyle: lipgloss.NewStyle().
-			Foreground(Base.GetForeground()).
+			Foreground(styles.Base.GetForeground()).
 			Background(normalModeBG).
 			Bold(true),
 
 		InsertModeStyle: lipgloss.NewStyle().
-			Foreground(Base.GetForeground()).
+			Foreground(styles.Base.GetForeground()).
 			Background(insertModeBG).
 			Bold(true),
 
 		VisualModeStyle: lipgloss.NewStyle().
-			Foreground(Base.GetForeground()).
+			Foreground(styles.Base.GetForeground()).
 			Background(visualModeBG).
 			Bold(true),
 
 		CommandModeStyle: lipgloss.NewStyle().
-			Foreground(Base.GetForeground()).
+			Foreground(styles.Base.GetForeground()).
 			Background(commandModeBG).
 			Bold(true),
 
 		SearchModeStyle: lipgloss.NewStyle().
-			Foreground(Base.GetForeground()).
+			Foreground(styles.Base.GetForeground()).
 			Background(searchModeBG).
 			Bold(true),
 
-		CommandLineStyle: Surface0,
+		CommandLineStyle: styles.Surface0,
 
-		StatusLineStyle: Surface1.
-			Foreground(Subtext0.GetForeground()),
+		StatusLineStyle: styles.Surface1.
+			Foreground(styles.Subtext0.GetForeground()),
 
-		MessageStyle: Info,
-		ErrorStyle:   Error.Bold(true),
+		MessageStyle: styles.Info,
+		ErrorStyle:   styles.Error.Bold(true),
 
-		LineNumberStyle: Overlay0.
+		LineNumberStyle: styles.Overlay0.
 			Width(4).
 			Align(lipgloss.Right),
 
-		CurrentLineNumberStyle: Text.
+		CurrentLineNumberStyle: styles.Text.
 			Width(4).
 			Align(lipgloss.Right),
 
-		SelectionStyle: Surface1,
+		SelectionStyle: styles.Surface1,
 
-		HighlightYankStyle: Highlight.
+		HighlightYankStyle: styles.Highlight.
 			Bold(true),
 
-		PlaceholderStyle: Overlay0,
+		PlaceholderStyle: styles.Overlay0,
 
-		SearchHighlightStyle: Highlight.
+		SearchHighlightStyle: styles.Highlight.
 			Bold(true),
 
-		SearchInputTextStyle: Text,
+		SearchInputTextStyle: styles.Text,
 
-		SearchInputPromptStyle: Subtext1,
+		SearchInputPromptStyle: styles.Subtext1,
 
-		SearchInputCursorStyle: Subtext1,
+		SearchInputCursorStyle: styles.Subtext1,
 
-		CurrentLineStyle: Surface0,
+		CurrentLineStyle: styles.Surface0,
 	}
 }
 
-func EditorLanguageTheme() string {
+func EditorLanguageTheme(isDark bool) string {
 	if IsDark() {
 		return "catppuccin-mocha"
 	}

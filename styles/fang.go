@@ -9,19 +9,21 @@ import (
 )
 
 func FangColorScheme(c lipgloss.LightDarkFunc) fang.ColorScheme {
+	styles := New(IsDark())
+
 	return fang.ColorScheme{
-		Base:           Primary.GetForeground(),
-		Title:          Accent.GetForeground(),
-		Codeblock:      Surface0.GetBackground(),
-		Program:        Primary.GetForeground(),
-		Command:        Primary.GetForeground(),
-		DimmedArgument: Overlay1.GetForeground(),
-		Comment:        Subtext1.GetForeground(),
-		Flag:           Success.GetForeground(),
-		Argument:       Text.GetForeground(),
-		Description:    Text.GetForeground(),
-		FlagDefault:    Text.GetForeground(),
-		QuotedString:   Accent.GetForeground(),
+		Base:           styles.Primary.GetForeground(),
+		Title:          styles.Accent.GetForeground(),
+		Codeblock:      styles.Surface0.GetBackground(),
+		Program:        styles.Primary.GetForeground(),
+		Command:        styles.Primary.GetForeground(),
+		DimmedArgument: styles.Overlay1.GetForeground(),
+		Comment:        styles.Subtext1.GetForeground(),
+		Flag:           styles.Success.GetForeground(),
+		Argument:       styles.Text.GetForeground(),
+		Description:    styles.Text.GetForeground(),
+		FlagDefault:    styles.Text.GetForeground(),
+		QuotedString:   styles.Accent.GetForeground(),
 		ErrorHeader: [2]color.Color{
 			charmtone.Butter,
 			charmtone.Cherry,

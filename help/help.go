@@ -13,6 +13,7 @@ import (
 
 type Model struct {
 	viewport viewport.Model
+	styles   styles.Styles
 }
 
 func New() Model {
@@ -36,7 +37,7 @@ func (m Model) Init() tea.Cmd {
 	return nil
 }
 
-func (m Model) Update(msg tea.Msg) (tea.Model, tea.Cmd) {
+func (m Model) Update(msg tea.Msg) (Model, tea.Cmd) {
 	vp, cmd := m.viewport.Update(msg)
 	m.viewport = vp
 
@@ -48,7 +49,7 @@ func (m Model) View() string {
 }
 
 // RenderHelpView renders a help view for key bindings with their descriptions.
-func RenderHelpView(width int, keys []key.Binding) string {
+func RenderHelpView(styles styles.Styles, width int, keys []key.Binding) string {
 	var sb strings.Builder
 
 	enabledBindings := make([]key.Binding, 0)
@@ -100,7 +101,7 @@ func RenderHelpView(width int, keys []key.Binding) string {
 }
 
 // RenderCmdHelp renders a help view for commands with their descriptions.
-func RenderCmdHelp(width int, entries []struct {
+func RenderCmdHelp(styles styles.Styles, width int, entries []struct {
 	Command     string
 	Description string
 },

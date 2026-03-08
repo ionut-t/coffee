@@ -5,7 +5,7 @@ import (
 	"charm.land/lipgloss/v2"
 )
 
-func ListStyles() (s list.Styles) {
+func ListStyles(styles Styles) (s list.Styles) {
 	const (
 		bullet   = "•"
 		ellipsis = "…"
@@ -16,14 +16,14 @@ func ListStyles() (s list.Styles) {
 
 	s.TitleBar = lipgloss.NewStyle().Padding(0, 0, 1, 2)
 
-	s.Title = Primary.Bold(true)
+	s.Title = styles.Primary.Bold(true)
 
 	s.Spinner = lipgloss.NewStyle().
 		Foreground(AdaptiveColorFromString("#8E8E8E", "#747373"))
 
-	s.Filter.Focused.Prompt = Primary
+	s.Filter.Focused.Prompt = styles.Primary
 
-	s.Filter.Cursor.Color = Primary.GetForeground()
+	s.Filter.Cursor.Color = styles.Primary.GetForeground()
 
 	s.DefaultFilterCharacterMatch = lipgloss.NewStyle().Underline(true)
 
@@ -33,11 +33,11 @@ func ListStyles() (s list.Styles) {
 
 	s.StatusEmpty = lipgloss.NewStyle().Foreground(subduedColor)
 
-	s.StatusBarActiveFilter = Primary
+	s.StatusBarActiveFilter = styles.Primary
 
 	s.StatusBarFilterCount = lipgloss.NewStyle().Foreground(verySubduedColor)
 
-	s.NoItems = Base
+	s.NoItems = styles.Base
 
 	s.ArabicPagination = lipgloss.NewStyle().Foreground(subduedColor)
 
@@ -60,18 +60,18 @@ func ListStyles() (s list.Styles) {
 	return s
 }
 
-func ListItemStyles() (s list.DefaultItemStyles) {
-	s.NormalTitle = Text.Padding(0, 0, 0, 2)
+func ListItemStyles(styles Styles) (s list.DefaultItemStyles) {
+	s.NormalTitle = styles.Text.Padding(0, 0, 0, 2)
 
-	s.NormalDesc = s.NormalTitle.Foreground(Overlay0.GetForeground())
+	s.NormalDesc = s.NormalTitle.Foreground(styles.Overlay0.GetForeground())
 
-	s.SelectedTitle = Primary.
+	s.SelectedTitle = styles.Primary.
 		Border(lipgloss.NormalBorder(), false, false, false, true).
-		BorderForeground(Primary.GetForeground()).
+		BorderForeground(styles.Primary.GetForeground()).
 		Padding(0, 0, 0, 1)
 
 	s.SelectedDesc = s.SelectedTitle.
-		Foreground(Accent.GetForeground())
+		Foreground(styles.Accent.GetForeground())
 
 	s.DimmedTitle = lipgloss.NewStyle().
 		Foreground(AdaptiveColorFromString("#A49FA5", "#777777")).
