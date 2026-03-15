@@ -75,7 +75,7 @@ func EditorTheme(styles Styles) editor.Theme {
 }
 
 func EditorLanguageTheme(isDark bool) string {
-	if IsDark() {
+	if isDark {
 		return "catppuccin-mocha"
 	}
 

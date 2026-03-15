@@ -12,12 +12,15 @@ func IsDark() bool {
 	return lipgloss.HasDarkBackground(os.Stdout, os.Stderr)
 }
 
-func AdaptiveColorFromString(light, dark string) color.Color {
-	if IsDark() {
-		return lipgloss.Color(dark)
-	}
+func AdaptiveColorFromString(isDark bool) func(light, dark string) color.Color {
+	lipgloss.LightDark(isDark)
 
-	return lipgloss.Color(light)
+	return func(light, dark string) color.Color {
+		if isDark {
+			return lipgloss.Color(dark)
+		}
+		return lipgloss.Color(light)
+	}
 }
 
 type Styles struct {

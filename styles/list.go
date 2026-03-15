@@ -5,21 +5,23 @@ import (
 	"charm.land/lipgloss/v2"
 )
 
-func ListStyles(styles Styles) (s list.Styles) {
+func ListStyles(styles Styles, isDark bool) (s list.Styles) {
 	const (
 		bullet   = "•"
 		ellipsis = "…"
 	)
 
-	verySubduedColor := AdaptiveColorFromString("#DDDADA", "#3C3C3C")
-	subduedColor := AdaptiveColorFromString("#9B9B9B", "#5C5C5C")
+	lightDark := AdaptiveColorFromString(isDark)
+
+	verySubduedColor := lightDark("#DDDADA", "#3C3C3C")
+	subduedColor := lightDark("#9B9B9B", "#5C5C5C")
 
 	s.TitleBar = lipgloss.NewStyle().Padding(0, 0, 1, 2)
 
 	s.Title = styles.Primary.Bold(true)
 
 	s.Spinner = lipgloss.NewStyle().
-		Foreground(AdaptiveColorFromString("#8E8E8E", "#747373"))
+		Foreground(lightDark("#8E8E8E", "#747373"))
 
 	s.Filter.Focused.Prompt = styles.Primary
 
@@ -28,7 +30,7 @@ func ListStyles(styles Styles) (s list.Styles) {
 	s.DefaultFilterCharacterMatch = lipgloss.NewStyle().Underline(true)
 
 	s.StatusBar = lipgloss.NewStyle().
-		Foreground(AdaptiveColorFromString("#A49FA5", "#777777")).
+		Foreground(lightDark("#A49FA5", "#777777")).
 		Padding(0, 0, 1, 2)
 
 	s.StatusEmpty = lipgloss.NewStyle().Foreground(subduedColor)
@@ -46,7 +48,7 @@ func ListStyles(styles Styles) (s list.Styles) {
 	s.HelpStyle = lipgloss.NewStyle().Padding(1, 0, 0, 2)
 
 	s.ActivePaginationDot = lipgloss.NewStyle().
-		Foreground(AdaptiveColorFromString("#847A85", "#979797")).
+		Foreground(lightDark("#847A85", "#979797")).
 		SetString(bullet)
 
 	s.InactivePaginationDot = lipgloss.NewStyle().
@@ -60,7 +62,9 @@ func ListStyles(styles Styles) (s list.Styles) {
 	return s
 }
 
-func ListItemStyles(styles Styles) (s list.DefaultItemStyles) {
+func ListItemStyles(styles Styles, isDark bool) (s list.DefaultItemStyles) {
+	lightDark := AdaptiveColorFromString(isDark)
+
 	s.NormalTitle = styles.Text.Padding(0, 0, 0, 2)
 
 	s.NormalDesc = s.NormalTitle.Foreground(styles.Overlay0.GetForeground())
@@ -74,11 +78,11 @@ func ListItemStyles(styles Styles) (s list.DefaultItemStyles) {
 		Foreground(styles.Accent.GetForeground())
 
 	s.DimmedTitle = lipgloss.NewStyle().
-		Foreground(AdaptiveColorFromString("#A49FA5", "#777777")).
+		Foreground(lightDark("#A49FA5", "#777777")).
 		Padding(0, 0, 0, 2)
 
 	s.DimmedDesc = s.DimmedTitle.
-		Foreground(AdaptiveColorFromString("#C2B8C2", "#4D4D4D"))
+		Foreground(lightDark("#C2B8C2", "#4D4D4D"))
 
 	s.FilterMatch = lipgloss.NewStyle().Underline(true)
 

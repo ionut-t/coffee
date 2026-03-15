@@ -90,11 +90,10 @@ func RenderHelpView(styles styles.Styles, width int, keys []key.Binding) string 
 			renderedDescription.WriteString(renderedLine)
 		}
 
-		sb.WriteString(fmt.Sprintf("• %s%s%s\n",
+		fmt.Fprintf(&sb, "• %s%s%s\n",
 			renderedKey,
 			padding,
-			renderedDescription.String(),
-		))
+			renderedDescription.String())
 	}
 
 	return bg.Width(width).Padding(1, 1).Render(strings.Trim(sb.String(), "\n"))
@@ -135,11 +134,10 @@ func RenderCmdHelp(styles styles.Styles, width int, entries []struct {
 			renderedDescription.WriteString(renderedLine)
 		}
 
-		sb.WriteString(fmt.Sprintf("• %s%s%s\n",
+		fmt.Fprintf(&sb, "• %s%s%s\n",
 			renderedKey,
 			padding,
-			renderedDescription.String(),
-		))
+			renderedDescription.String())
 	}
 
 	return lipgloss.NewStyle().Width(width).Padding(1, 1).Render(strings.Trim(sb.String(), "\n"))
