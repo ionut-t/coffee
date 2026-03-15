@@ -7,10 +7,13 @@ import (
 
 func TableTheme(styles Styles) table.Theme {
 	return table.Theme{
-		Header:       styles.AccentBackground.Bold(true),
-		Cell:         styles.Subtext0,
-		Border:       styles.Overlay0,
-		SelectedRow:  styles.Highlight.Bold(true),
-		SelectedCell: lipgloss.NewStyle().Bold(true).Background(styles.Text.GetForeground()).Foreground(styles.AccentBackground.GetBackground()),
+		Header:      styles.AccentBackground.Bold(true),
+		Cell:        styles.Subtext0,
+		Border:      styles.Overlay0,
+		SelectedRow: styles.Highlight.Bold(true),
+		SelectedCell: lipgloss.NewStyle().
+			Bold(true).
+			Background(styles.Text.GetForeground()).
+			Foreground(styles.AccentBackground.GetBackground()),
 	}
 }

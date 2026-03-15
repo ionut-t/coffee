@@ -79,7 +79,7 @@ func New(isDark bool) Styles {
 
 		Crust: lipgloss.NewStyle().Background(lightDark(catppuccin.Latte.Crust(), catppuccin.Mocha.Crust())),
 
-		AccentBackground: lipgloss.NewStyle().Background(lightDark(catppuccin.Latte.Teal(), catppuccin.Mocha.Teal())),
+		AccentBackground: lipgloss.NewStyle().Background(lightDark(catppuccin.Mocha.Teal(), catppuccin.Latte.Teal())),
 
 		Highlight: lipgloss.NewStyle().Foreground(lightDark(catppuccin.Latte.Base(), catppuccin.Mocha.Base())).Background(lightDark(catppuccin.Latte.Sapphire(), catppuccin.Mocha.Sapphire())),
 
