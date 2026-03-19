@@ -4,8 +4,8 @@ import (
 	_ "embed"
 	"os"
 
+	"charm.land/glamour/v2"
 	"charm.land/lipgloss/v2"
-	"github.com/charmbracelet/glamour"
 )
 
 //go:embed glamour-themes/catppuccin-mocha.json
