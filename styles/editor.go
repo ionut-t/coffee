@@ -2,7 +2,7 @@ package styles
 
 import (
 	"charm.land/lipgloss/v2"
-	editor "github.com/ionut-t/goeditor/adapter-bubbletea"
+	editor "github.com/ionut-t/goeditor"
 )
 
 func EditorTheme(styles Styles) editor.Theme {

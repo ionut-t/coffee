@@ -32,8 +32,10 @@ github.com/charmbracelet/x/conpty v0.1.1 h1:s1bUxjoi7EpqiXysVtC+a8RrvPPNcNvAjfi4
 github.com/charmbracelet/x/conpty v0.1.1/go.mod h1:OmtR77VODEFbiTzGE9G1XiRJAga6011PIm4u5fTNZpk=
 github.com/charmbracelet/x/errors v0.0.0-20240508181413-e8d8b6e2de86 h1:JSt3B+U9iqk37QUU2Rvb6DSBYRLtWqFqfxf8l5hOZUA=
 github.com/charmbracelet/x/errors v0.0.0-20240508181413-e8d8b6e2de86/go.mod h1:2P0UgXMEa6TsToMSuFqKFQR+fZTO9CNGUNokkPatT/0=
-github.com/charmbracelet/x/exp/charmtone v0.0.0-20250603201427-c31516f43444 h1:IJDiTgVE56gkAGfq0lBEloWgkXMk4hl/bmuPoicI4R0=
-github.com/charmbracelet/x/exp/charmtone v0.0.0-20250603201427-c31516f43444/go.mod h1:T9jr8CzFpjhFVHjNjKwbAD7KwBNyFnj2pntAO7F2zw0=
+github.com/charmbracelet/x/exp/charmtone v0.0.0-20250922100529-c9afca5d6f21 h1:yj3hUDwlNVcwDBDBUYgqiRS/d5RI+8UyHXlGTmJpTaI=
+github.com/charmbracelet/x/exp/charmtone v0.0.0-20250922100529-c9afca5d6f21/go.mod h1:URW1lCfdUqp9aey3HTV+jRvaGLuaj2d0jVk2NTRpklY=
+github.com/charmbracelet/x/exp/color v0.0.0-20250915100343-2c2e5896ae6e h1:tgRdEJh8/v6MBs2ZR7g2m1fABjnGft5wXyI+X/l5WF8=
+github.com/charmbracelet/x/exp/color v0.0.0-20250915100343-2c2e5896ae6e/go.mod h1:/tsSyfR1O2EokQP9iNzNK/fnf5FGdB4w0MOaJTBRp5Q=
 github.com/charmbracelet/x/exp/golden v0.0.0-20250806222409-83e3a29d542f h1:pk6gmGpCE7F3FcjaOEKYriCvpmIN4+6OS/RD0vm4uIA=
 github.com/charmbracelet/x/exp/golden v0.0.0-20250806222409-83e3a29d542f/go.mod h1:IfZAMTHB6XkZSeXUqriemErjAWCCzT0LwjKFYCZyw0I=
 github.com/charmbracelet/x/exp/ordered v0.1.0 h1:55/qLwjIh0gL0Vni+QAWk7T/qRVP6sBf+2agPBgnOFE=
@@ -65,10 +67,8 @@ github.com/hexops/gotextdiff v1.0.3 h1:gitA9+qJrrTCsiCl7+kh75nPqQt1cx4ZkudSTLoUq
 github.com/hexops/gotextdiff v1.0.3/go.mod h1:pSWU5MAI3yDq+fZBTazCSJysOMbxWL1BSow5/V2vxeg=
 github.com/inconshreveable/mousetrap v1.1.0 h1:wN+x4NVGpMsO7ErUn/mUI3vEoE6Jt13X2s0bqwp9tc8=
 github.com/inconshreveable/mousetrap v1.1.0/go.mod h1:vpF70FUmC8bwa3OWnCshd2FqLfsEA9PFc4w1p2J65bw=
-github.com/ionut-t/goeditor/adapter-bubbletea v0.3.0 h1:21odT1qUswTXwTFpaqR22sLAWBu43HptO0DpedhUW+8=
-github.com/ionut-t/goeditor/adapter-bubbletea v0.3.0/go.mod h1:7tIPaGW58/Y1+UU3jvtN++sVFh1gr71wDIlek1c/B3M=
-github.com/ionut-t/goeditor/core v0.3.0 h1:S42hgq4AjCkApEI0eFvNzj6Q44j8u3scW1uwzIKT2y8=
-github.com/ionut-t/goeditor/core v0.3.0/go.mod h1:/BKScsReQFJUrjMPQfR6lm2EtGrvNQYO4YQXc/6sIMw=
+github.com/ionut-t/goeditor v0.4.1 h1:uMMMlxnZYewRYrCFaE2jNGZGy4oWf1SXCzA1SxGMeIk=
+github.com/ionut-t/goeditor v0.4.1/go.mod h1:8BQAKA7hOz0yy2DjI7KpoZbj+eoM2vYnihGpH4kdNug=
 github.com/ionut-t/gotable v1.0.0 h1:treAGtzGES5YKrDtdwR9ASGXDj5XXSI2o3KGxwzglHM=
 github.com/ionut-t/gotable v1.0.0/go.mod h1:m+8EqBXdrcVHyxmod8qoO0ieKSLKYAhtfRyriEW57k0=
 github.com/kylelemons/godebug v1.1.0 h1:RPNrshWIDI6G2gRW9EHilWtl7Z6Sb1BR0xunSBf0SNc=
