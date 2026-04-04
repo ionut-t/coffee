@@ -71,6 +71,24 @@ func EditorTheme(styles Styles) editor.Theme {
 		SearchInputCursorStyle: styles.Subtext1,
 
 		CurrentLineStyle: styles.Surface0,
+
+		CompletionMenuItemStyle: lipgloss.NewStyle().
+			Padding(0, 1),
+
+		CompletionMenuSelectedItemStyle: lipgloss.NewStyle().
+			Background(styles.Surface1.GetForeground()).
+			Padding(0, 1).
+			Bold(true),
+
+		CompletionMenuBorderStyle: lipgloss.NewStyle().
+			Border(lipgloss.RoundedBorder()).
+			BorderForeground(styles.Overlay0.GetForeground()).
+			Padding(0),
+
+		CompletionMenuLabelStyle: styles.Info.
+			Bold(true),
+
+		CompletionMenuTypeStyle: styles.Primary,
 	}
 }
 
