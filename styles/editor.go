@@ -75,8 +75,7 @@ func EditorTheme(styles Styles) editor.Theme {
 		CompletionMenuItemStyle: lipgloss.NewStyle().
 			Padding(0, 1),
 
-		CompletionMenuSelectedItemStyle: lipgloss.NewStyle().
-			Background(styles.Surface1.GetForeground()).
+		CompletionMenuSelectedItemStyle: styles.Surface1.
 			Padding(0, 1).
 			Bold(true),
 
